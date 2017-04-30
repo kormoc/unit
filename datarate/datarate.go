@@ -66,6 +66,22 @@ func NewDatarate(datasize Datarate, duration time.Duration) Datarate {
     return Datarate(float64(datasize) / duration.Seconds())
 }
 
+func NewDatarateSIBits(datasize Datarate, duration time.Duration) DatarateSIBit {
+    return DatarateSIBit(float64(datasize) / duration.Seconds())
+}
+
+func NewDatarateIECBits(datasize Datarate, duration time.Duration) DatarateIECBit {
+    return DatarateIECBit(float64(datasize) / duration.Seconds())
+}
+
+func NewDatarateSIBytes(datasize Datarate, duration time.Duration) DatarateSIByte {
+    return DatarateSIByte(float64(datasize) / duration.Seconds())
+}
+
+func NewDatarateIECBytes(datasize Datarate, duration time.Duration) DatarateIECByte {
+    return DatarateIECByte(float64(datasize) / duration.Seconds())
+}
+
 func SetOutputStringMaxPercision(maxPercision int) {
     outputStringMaxPercision = maxPercision
 
