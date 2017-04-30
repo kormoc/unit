@@ -1,11 +1,9 @@
 package datarate
 
 import "testing"
-import "time"
-import "github.com/kormoc/unit/datasize"
 
 func Test(t *testing.T) {
-    datarate := NewDatarate(500 * datasize.Megabyte, 17*time.Second)
+    datarate := NewDatarate(500 * Megabyte, 17*Second)
 
     if DatarateSIBit(datarate).String() != "235.294Mbit/s" {
         t.Fatalf("DatarateSIBit has failed\n\tExpected: %v\n\tFound: %v\n", "235.294Mbit/s", DatarateSIBit(datarate).String())
@@ -25,7 +23,7 @@ func Test(t *testing.T) {
 }
 
 func TestOutputStringMaxPercision(t *testing.T) {
-    datarate := NewDatarate(500 * datasize.Megabyte, 17*time.Second)
+    datarate := NewDatarate(500 * Megabyte, 17*Second)
     SetOutputStringMaxPercision(0)
 
     if DatarateIECByte(datarate).String() != "28MiB/s" {

@@ -62,7 +62,6 @@ var IECBytes = [...]unit.Unit {
     {Name:     "byte per second", Size: float64(datasize.Byte    ), Suffix: "B/s"},
 }
 
-
 func NewDatarate(datasize datasize.Datasize, duration time.Duration) Datarate {
     return Datarate(float64(datasize) / duration.Seconds())
 }
@@ -101,3 +100,60 @@ func (d DatarateIECBit) String() string {
 func (d DatarateIECByte) String() string {
     return buildHumanString(float64(d), IECBytes)
 }
+
+// Helper consts
+
+const (
+    Nanosecond  = time.Nanosecond
+    Microsecond = time.Microsecond
+    Millisecond = time.Millisecond
+    Second      = time.Second
+    Minute      = time.Minute
+    Hour        = time.Hour
+)
+
+const (
+    Bit      = datasize.Bit
+    Kilobit  = datasize.Kilobit
+    Megabit  = datasize.Megabit
+    Gigabit  = datasize.Gigabit
+    Terabit  = datasize.Terabit
+    Petabit  = datasize.Petabit
+    Exabit   = datasize.Exabit
+    Zettabit = datasize.Zettabit
+    Yottabit = datasize.Yottabit
+)
+
+const (
+    Kibibit = datasize.Kibibit
+    Mebibit = datasize.Mebibit
+    Gibibit = datasize.Gibibit
+    Tebibit = datasize.Tebibit
+    Pebibit = datasize.Pebibit
+    Exbibit = datasize.Exbibit
+    Zebibit = datasize.Zebibit
+    Yobibit = datasize.Yobibit
+)
+
+const (
+    Byte       = datasize.Byte
+    Kilobyte   = datasize.Kilobyte
+    Megabyte   = datasize.Megabyte
+    Gigabyte   = datasize.Gigabyte
+    Terabyte   = datasize.Terabyte
+    Petabyte   = datasize.Petabyte
+    Exabyte    = datasize.Exabyte
+    Zettabyte  = datasize.Zettabyte
+    Yottabyte  = datasize.Yottabyte
+)
+
+const (
+    Kibibyte = datasize.Kibibyte
+    Mebibyte = datasize.Mebibyte
+    Gibibyte = datasize.Gibibyte
+    Tebibyte = datasize.Tebibyte
+    Pebibyte = datasize.Pebibyte
+    Exbibyte = datasize.Exbibyte
+    Zebibyte = datasize.Zebibyte
+    Yobibyte = datasize.Yobibyte
+)
