@@ -6,7 +6,7 @@ import "github.com/kormoc/unit/datasize"
 import "strings"
 import "time"
 
-type Datarate float64
+type Datarate        float64
 type DatarateSIBit   Datarate
 type DatarateSIByte  Datarate
 type DatarateIECBit  Datarate
@@ -62,7 +62,7 @@ var IECBytes = [...]unit.Unit {
     {Name:     "byte per second", Size: float64(datasize.Byte    ), Suffix: "B/s"},
 }
 
-func NewDatarate(datasize datasize.Datasize, duration time.Duration) Datarate {
+func NewDatarate(datasize Datarate, duration time.Duration) Datarate {
     return Datarate(float64(datasize) / duration.Seconds())
 }
 
@@ -103,57 +103,47 @@ func (d DatarateIECByte) String() string {
 
 // Helper consts
 
-const (
-    Nanosecond  = time.Nanosecond
-    Microsecond = time.Microsecond
-    Millisecond = time.Millisecond
-    Second      = time.Second
-    Minute      = time.Minute
-    Hour        = time.Hour
-)
+const Nanosecond  = time.Nanosecond
+const Microsecond = time.Microsecond
+const Millisecond = time.Millisecond
+const Second      = time.Second
+const Minute      = time.Minute
+const Hour        = time.Hour
 
-const (
-    Bit      = datasize.Bit
-    Kilobit  = datasize.Kilobit
-    Megabit  = datasize.Megabit
-    Gigabit  = datasize.Gigabit
-    Terabit  = datasize.Terabit
-    Petabit  = datasize.Petabit
-    Exabit   = datasize.Exabit
-    Zettabit = datasize.Zettabit
-    Yottabit = datasize.Yottabit
-)
+const Bit         = Datarate(datasize.Bit)
+const Kilobit     = Datarate(datasize.Kilobit)
+const Megabit     = Datarate(datasize.Megabit)
+const Gigabit     = Datarate(datasize.Gigabit)
+const Terabit     = Datarate(datasize.Terabit)
+const Petabit     = Datarate(datasize.Petabit)
+const Exabit      = Datarate(datasize.Exabit)
+const Zettabit    = Datarate(datasize.Zettabit)
+const Yottabit    = Datarate(datasize.Yottabit)
 
-const (
-    Kibibit = datasize.Kibibit
-    Mebibit = datasize.Mebibit
-    Gibibit = datasize.Gibibit
-    Tebibit = datasize.Tebibit
-    Pebibit = datasize.Pebibit
-    Exbibit = datasize.Exbibit
-    Zebibit = datasize.Zebibit
-    Yobibit = datasize.Yobibit
-)
+const Kibibit     = Datarate(datasize.Kibibit)
+const Mebibit     = Datarate(datasize.Mebibit)
+const Gibibit     = Datarate(datasize.Gibibit)
+const Tebibit     = Datarate(datasize.Tebibit)
+const Pebibit     = Datarate(datasize.Pebibit)
+const Exbibit     = Datarate(datasize.Exbibit)
+const Zebibit     = Datarate(datasize.Zebibit)
+const Yobibit     = Datarate(datasize.Yobibit)
 
-const (
-    Byte       = datasize.Byte
-    Kilobyte   = datasize.Kilobyte
-    Megabyte   = datasize.Megabyte
-    Gigabyte   = datasize.Gigabyte
-    Terabyte   = datasize.Terabyte
-    Petabyte   = datasize.Petabyte
-    Exabyte    = datasize.Exabyte
-    Zettabyte  = datasize.Zettabyte
-    Yottabyte  = datasize.Yottabyte
-)
+const Byte        = Datarate(datasize.Byte)
+const Kilobyte    = Datarate(datasize.Kilobyte)
+const Megabyte    = Datarate(datasize.Megabyte)
+const Gigabyte    = Datarate(datasize.Gigabyte)
+const Terabyte    = Datarate(datasize.Terabyte)
+const Petabyte    = Datarate(datasize.Petabyte)
+const Exabyte     = Datarate(datasize.Exabyte)
+const Zettabyte   = Datarate(datasize.Zettabyte)
+const Yottabyte   = Datarate(datasize.Yottabyte)
 
-const (
-    Kibibyte = datasize.Kibibyte
-    Mebibyte = datasize.Mebibyte
-    Gibibyte = datasize.Gibibyte
-    Tebibyte = datasize.Tebibyte
-    Pebibyte = datasize.Pebibyte
-    Exbibyte = datasize.Exbibyte
-    Zebibyte = datasize.Zebibyte
-    Yobibyte = datasize.Yobibyte
-)
+const Kibibyte    = Datarate(datasize.Kibibyte)
+const Mebibyte    = Datarate(datasize.Mebibyte)
+const Gibibyte    = Datarate(datasize.Gibibyte)
+const Tebibyte    = Datarate(datasize.Tebibyte)
+const Pebibyte    = Datarate(datasize.Pebibyte)
+const Exbibyte    = Datarate(datasize.Exbibyte)
+const Zebibyte    = Datarate(datasize.Zebibyte)
+const Yobibyte    = Datarate(datasize.Yobibyte)
